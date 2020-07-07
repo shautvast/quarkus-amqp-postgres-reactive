@@ -20,7 +20,7 @@ public class BewegingConsumer {
     public void consume(String body) {
         try {
             Beweging beweging = objectMapper.readValue(body, Beweging.class);
-            System.out.println(beweging);
+
             bewegingRepo.persist(beweging);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
